@@ -1,0 +1,20 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_hackpp_sceapp_imp_co2_cons_raw_hdr_forms",
+      "Namespace": "IMP_CO2_CONS_RAW_HDR (Forms)",
+      "Values": {
+        "IMP_CO2_CONS_RAW_HDR main form": "6f2e526d-e6ae-ed11-83fd-0022485d187d",
+        "IMP_CO2_CONS_RAW_HDR quick create form": "0672bdf5-64fe-ee11-9f89-0022485b0087",
+        "Information": "7fbc121e-bc5b-4791-8cb6-7bf2cbfef5da"
+      }
+    },
+    {
+      "Kind": "default.cds_hackpp_sceapp_imp_user_forms",
+      "Namespace": "IMP_USERS (Forms)",
+      "Values": {
+        "Information": "f3237fc6-3f3c-4080-99f2-90136f0c6245"
+      }
+    }
+  ]
+}

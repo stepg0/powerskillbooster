@@ -1,0 +1,127 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "hackpp_sceapp_imp_co2_cons_raw_hdrs",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "hackpp_sceapp_imp_co2_cons_raw_hdr",
+    "MaxGetRowsCount": 500,
+    "Name": "IMP_CO2_CONS_RAW_HDR",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "cr181_cst_imp_desc": "CST_IMP_DESC",
+      "cr181_cst_imp_state": "CST_IMP_STATE",
+      "cr181_IMP_FK_HDR_ITEMS": "IMP_CO2_CONS_RAW",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "hackpp_sceapp_cst_appr_ts": "CST_APPR_TS",
+      "HACKPP_SCEAPP_CST_APPR_USERNAME": "CST_APPR_USERNAME",
+      "hackpp_sceapp_cst_imp_code": "CST_IMP_CODE",
+      "hackpp_sceapp_cst_imp_ts": "CST_IMP_TS",
+      "HACKPP_SCEAPP_CST_IMP_USERNAME": "CST_IMP_USERNAME",
+      "hackpp_sceapp_cst_imp_year": "CST_IMP_YEAR",
+      "hackpp_sceapp_imp_co2_cons_raw_hdr_Annotations": "Notes",
+      "hackpp_sceapp_imp_co2_cons_raw_hdr_AsyncOperations": "System Jobs",
+      "hackpp_sceapp_imp_co2_cons_raw_hdr_BulkDeleteFailures": "Bulk Delete Failures",
+      "hackpp_sceapp_imp_co2_cons_raw_hdr_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "hackpp_sceapp_imp_co2_cons_raw_hdr_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "hackpp_sceapp_imp_co2_cons_raw_hdr_ProcessSession": "Process Sessions",
+      "hackpp_sceapp_imp_co2_cons_raw_hdr_SyncErrors": "Sync Errors",
+      "hackpp_sceapp_imp_co2_cons_raw_hdrid": "IMP_CO2_CONS_RAW_HDR",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "IMP_CO2_CONS_RAW_HDR",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "IMP_CO2_CONS_RAW_HDR (Views)",
+    "Name": "_hackpp_sceapp_imp_co2_cons_raw_hdr_views",
+    "RelatedEntityName": "IMP_CO2_CONS_RAW_HDR",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "499a7e33-e10c-4626-8c88-6d99f610eea1": "Active IMP_CO2_CONS_RAW_HDR",
+      "792447e8-f256-4c2e-9944-72d895222797": "IMP_CO2_CONS_RAW_HDR Lookup View",
+      "7ac3f316-f0a4-405f-bd66-993176046b2c": "IMP_CO2_CONS_RAW_HDR Advanced Find View",
+      "84c4b6be-03cd-4ec6-9a44-340ea48c8290": "Inactive IMP_CO2_CONS_RAW_HDR",
+      "a37f6e9d-e38b-4a98-a07e-6277e030af99": "IMP_CO2_CONS_RAW_HDR Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (IMP_CO2_CONS_RAW_HDR)",
+    "Name": "hackpp_sceapp_imp_co2_cons_raw_hdr_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "IMP_CO2_CONS_RAW_HDR"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "IMP_CO2_CONS_RAW_HDR",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (IMP_CO2_CONS_RAW_HDR)",
+    "Name": "hackpp_sceapp_imp_co2_cons_raw_hdr_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "IMP_CO2_CONS_RAW_HDR"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "IMP_CO2_CONS_RAW_HDR",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "IMP_STATES_CHOICE",
+    "Name": "imp_states_choice",
+    "OptionSetInfoNameMapping": {
+      "1": "Approved",
+      "2": "Pending",
+      "3": "Finalized",
+      "4": "Processed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr181_cst_imp_state",
+        "OptionSetReferenceEntityName": "IMP_CO2_CONS_RAW_HDR"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr181_cst_imp_state",
+    "RelatedEntityName": "IMP_CO2_CONS_RAW_HDR",
+    "Type": "OptionSetInfo"
+  }
+]
