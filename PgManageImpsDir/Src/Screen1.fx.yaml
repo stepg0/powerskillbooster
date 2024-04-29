@@ -16,6 +16,7 @@ Screen1 As screen:
         Form1 As form:
             BorderColor: =RGBA(166, 166, 166, 1)
             DataSource: ='public.skillbooster_ex_tab'
+            DefaultMode: =FormMode.New
             LayoutMinHeight: =250
             LayoutMinWidth: =400
             ZIndex: =1
@@ -101,7 +102,7 @@ Screen1 As screen:
         OnChange: =false
         OnSelect: =SubmitForm(Form1);
         Width: =96
-        X: =60
-        Y: =176
+        X: =56
+        Y: =296
         ZIndex: =2
 
