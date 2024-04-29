@@ -1,4 +1,27 @@
 {
+  "4353183d-91f3-42b2-8c49-14cac1a1febb": {
+    "connectionRef": {
+      "displayName": "PostgreSQL",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1677/1.0.1677.3637/postgresql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_postgresql",
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_postgresql/connections/330719e51e2548619b1ee889c911540c"
+    },
+    "datasets": {
+      "default": {
+        "dataSources": {
+          "public.skillbooster_ex_tab": {
+            "tableName": "[public].[skillbooster_ex_tab]"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "public.skillbooster_ex_tab"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "4353183d-91f3-42b2-8c49-14cac1a1febb"
+  },
   "a0952e7b-2e23-43b6-b74f-eed473ddbf5e": {
     "appActions": [
       "Run"
