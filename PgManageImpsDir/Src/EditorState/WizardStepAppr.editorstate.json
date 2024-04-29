@@ -597,7 +597,7 @@
       "MetaDataIDKey": "",
       "Name": "WizardApproveHeaderBox01",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -754,7 +754,7 @@
       "MetaDataIDKey": "",
       "Name": "WizardApproveHeaderBox02",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -916,7 +916,7 @@
       "MetaDataIDKey": "",
       "Name": "WizardApproveHeaderIcon",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1339,7 +1339,7 @@
       "MetaDataIDKey": "",
       "Name": "WizardApproveHeaderLabel02",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1507,7 +1507,7 @@
       "MetaDataIDKey": "",
       "Name": "WizardApproveHeaderLabel03",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
