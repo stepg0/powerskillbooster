@@ -94,6 +94,276 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewImportCode.WizardUploadMainSectionViewImportCodeDataCard.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewImportCode.WizardUploadMainSectionViewImportCodeDataCard.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "WizardStepUploadData",
+                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewImportCode.WizardUploadMainSectionViewImportCodeDataCard"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewAttachments.WizardUploadMainSectionViewAttachmentsControl.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewAttachments.WizardUploadMainSectionViewAttachmentsControl.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "WizardStepUploadData",
+                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewAttachments.WizardUploadMainSectionViewAttachmentsControl"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainButtonSubmit.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainButtonSubmit.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "WizardStepUploadData",
+                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainButtonSubmit"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "WizardStepUploadData",
+                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "WizardStepUploadData",
+                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.WizardUploadMainSectionListBox.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.WizardUploadMainSectionListBox.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "WizardStepUploadData",
+                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.WizardUploadMainSectionListBox"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonPrevious.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonPrevious.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "WizardStepUploadData",
+                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonPrevious"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonNext.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonNext.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "WizardStepUploadData",
+                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonNext"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonHome.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonHome.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "WizardStepUploadData",
+                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonHome"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "WizardStepAppr.WizardStepApprLayout.WizardStepApprMain.WizardApproveMainSectionView.WizardApproveMainSectionViewImportCode.WizardApproveMainSectionViewImportCodeDataCard.AccessibleLabel"
                 }
               ],
@@ -296,7 +566,37 @@
             "level": "Low"
           },
           "ruleId": "acc-ReadableScreenNameNeeded",
-          "ruleIndex": 2
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen1.Button1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen1.Button1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen1",
+                "type": "Screen1.Button1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -566,7 +866,7 @@
             "level": "Medium"
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
+          "ruleIndex": 2
         },
         {
           "locations": [
@@ -813,289 +1113,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewImportCode.WizardUploadMainSectionViewImportCodeDataCard.AccessibleLabel"
+                  "fullyQualifiedName": "Screen1.Container1.Form1.created_at_DataCard1.HourValue1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewImportCode.WizardUploadMainSectionViewImportCodeDataCard.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "WizardStepUploadData",
-                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewImportCode.WizardUploadMainSectionViewImportCodeDataCard"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewAttachments.WizardUploadMainSectionViewAttachmentsControl.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewAttachments.WizardUploadMainSectionViewAttachmentsControl.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "WizardStepUploadData",
-                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainView.WizardUploadMainSectionViewAttachments.WizardUploadMainSectionViewAttachmentsControl"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainButtonSubmit.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainButtonSubmit.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "WizardStepUploadData",
-                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainButtonSubmit"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "WizardStepUploadData",
-                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "WizardStepUploadData",
-                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.WizardUploadMainSectionListBox.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.WizardUploadMainSectionListBox.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "WizardStepUploadData",
-                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataMain.WizardStepUploadDataMainList.WizardUploadMainSectionListBox"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonPrevious.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonPrevious.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "WizardStepUploadData",
-                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonPrevious"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonNext.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonNext.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "WizardStepUploadData",
-                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonNext"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonHome.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonHome.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "WizardStepUploadData",
-                "type": "WizardStepUploadData.WizardUploadVerticalLayout.WizardStepUploadDataFooter.WizardUploadFooterButtonHome"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Screen1.Button1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Screen1.Button1.AccessibleLabel",
+                  "fullyQualifiedName": "Screen1.Container1.Form1.created_at_DataCard1.HourValue1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen1",
-                "type": "Screen1.Button1"
+                "type": "Screen1.Container1.Form1.created_at_DataCard1.HourValue1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen1.Container1.Form1.created_at_DataCard1.MinuteValue1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen1.Container1.Form1.created_at_DataCard1.MinuteValue1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen1",
+                "type": "Screen1.Container1.Form1.created_at_DataCard1.MinuteValue1"
               }
             }
           ],
@@ -1211,23 +1271,6 @@
               }
             },
             {
-              "id": "acc-ReadableScreenNameNeeded",
-              "messageStrings": {
-                "issue": {
-                  "text": "Revise screen name"
-                }
-              },
-              "properties": {
-                "componentType": "app",
-                "howToFix": [
-                  "Give the screen  a title that describes what's on the screen or what it's used for."
-                ],
-                "level": "Low",
-                "primaryCategory": "accessibility",
-                "whyFix": "People who are blind, have low vision, or a reading disability rely on screen titles to navigate using the screen reader. "
-              }
-            },
-            {
               "id": "acc-TabIndexShouldBeDefinedForInteractiveControl",
               "messageStrings": {
                 "issue": {
@@ -1242,6 +1285,23 @@
                 "level": "Medium",
                 "primaryCategory": "accessibility",
                 "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
+              }
+            },
+            {
+              "id": "acc-ReadableScreenNameNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Revise screen name"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Give the screen  a title that describes what's on the screen or what it's used for."
+                ],
+                "level": "Low",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who are blind, have low vision, or a reading disability rely on screen titles to navigate using the screen reader. "
               }
             },
             {

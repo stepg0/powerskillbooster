@@ -9,6 +9,7 @@ Screen1 As screen:
         RadiusBottomRight: =4
         RadiusTopLeft: =4
         RadiusTopRight: =4
+        Width: =1242
         X: =40
         Y: =40
         ZIndex: =1
@@ -20,6 +21,412 @@ Screen1 As screen:
             LayoutMinHeight: =250
             LayoutMinWidth: =400
             ZIndex: =1
+
+            created_at_DataCard1 As typedDataCard.pcfCoreDateTimeEditCard:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="created_at"
+                Default: =ThisItem.created_at
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'public.skillbooster_ex_tab'],DataSourceInfo.DisplayName,created_at)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =true
+                Update: =If(Not IsBlank(DateValue1.Value), Date(Year(DateValue1.Value), Month(DateValue1.Value), Day(DateValue1.Value)) + Time(Value(HourValue1.Selected.Value), Value(MinuteValue1.Selected.Value), Value(Second(DateValue1.Value))))
+                Width: =166
+                WidthFit: =true
+                X: =1
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey2 As Label:
+                    AutoHeight: =true
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =9
+                    Height: =22
+                    OnChange: =false
+                    Text: =Parent.DisplayName
+                    Tooltip: =Parent.DisplayName
+                    VerticalAlignment: =VerticalAlign.Bottom
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DateValue1 As 'Date picker'":
+                    AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =32
+                    Tooltip: =Parent.DisplayName
+                    Value: =Parent.Default
+                    Width: =(Parent.Width - 48) / 2
+                    X: =24
+                    Y: =DataCardKey2.Y + DataCardKey2.Height + 4
+                    ZIndex: =2
+
+                HourValue1 As combobox:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(33, 33, 33, 1)
+                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DefaultSelectedItems: =[Text(Hour(Parent.Default),"00")]
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                    FocusedBorderThickness: =2
+                    Font: =Font.'Segoe UI'
+                    Height: =28
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(212, 212, 212, 1)
+                    IsSearchable: =false
+                    Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
+                    PaddingLeft: =12
+                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(212, 212, 212, 1)
+                    SelectionColor: =RGBA(51, 51, 51, 1)
+                    SelectionFill: =RGBA(0, 120, 212, 1)
+                    SelectMultiple: =false
+                    Size: =10.5
+                    Tooltip: =Parent.DisplayName
+                    Width: =DateValue1.Width / 2 - 10
+                    X: =DateValue1.X + DateValue1.Width + 10
+                    Y: =DateValue1.Y + 1
+                    ZIndex: =3
+
+                Separator1 As Label:
+                    Alignment: =Align.Center
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =10.5
+                    Height: =HourValue1.Height
+                    OnChange: =false
+                    Text: |-
+                        =":"
+                    VerticalAlignment: =VerticalAlign.Middle
+                    Width: =10
+                    X: =HourValue1.X + HourValue1.Width
+                    Y: =HourValue1.Y
+                    ZIndex: =4
+
+                MinuteValue1 As combobox:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(33, 33, 33, 1)
+                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DefaultSelectedItems: =[Text(Minute(Parent.Default),"00")]
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                    FocusedBorderThickness: =2
+                    Font: =Font.'Segoe UI'
+                    Height: =28
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(212, 212, 212, 1)
+                    IsSearchable: =false
+                    Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"]
+                    PaddingLeft: =12
+                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(212, 212, 212, 1)
+                    SelectionColor: =RGBA(51, 51, 51, 1)
+                    SelectionFill: =RGBA(0, 120, 212, 1)
+                    SelectMultiple: =false
+                    Size: =10.5
+                    Tooltip: =Parent.DisplayName
+                    Width: =HourValue1.Width
+                    X: =HourValue1.X + HourValue1.Width + Separator1.Width
+                    Y: =HourValue1.Y + 1
+                    ZIndex: =5
+
+                ErrorMessage2 As Label:
+                    AutoHeight: =true
+                    Color: =Color.Red
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =9
+                    Height: =30
+                    OnChange: =false
+                    Text: =Parent.Error
+                    Tooltip: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DateValue1.Y + DateValue1.Height
+                    ZIndex: =6
+
+                StarVisible2 As Label:
+                    Alignment: =Align.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =20
+                    OnChange: =false
+                    Text: ="*"
+                    VerticalAlignment: =VerticalAlign.Bottom
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey2.Y
+                    ZIndex: =7
+
+            email_DataCard1 As typedDataCard.pcfCoreTextualEditCard:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="email"
+                Default: =ThisItem.email
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'public.skillbooster_ex_tab'],DataSourceInfo.DisplayName,email)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@'public.skillbooster_ex_tab'], DataSourceInfo.MaxLength, email)
+                Required: =true
+                Update: =DataCardValue2.Value
+                Width: =166
+                WidthFit: =true
+                X: =2
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey3 As Label:
+                    AutoHeight: =true
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =9
+                    Height: =22
+                    OnChange: =false
+                    Text: =Parent.DisplayName
+                    Tooltip: =Parent.DisplayName
+                    VerticalAlignment: =VerticalAlign.Bottom
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue2 As 'Text box'":
+                    AccessibleLabel: =Parent.DisplayName
+                    DisplayMode: =Parent.DisplayMode
+                    FontSize: =10.5
+                    Height: =32
+                    Mode: ="SingleLine"
+                    Required: =Parent.Required
+                    Tooltip: =Parent.DisplayName
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey3.Y + DataCardKey3.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage3 As Label:
+                    AutoHeight: =true
+                    Color: =Color.Red
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =9
+                    Height: =30
+                    OnChange: =false
+                    Text: =Parent.Error
+                    Tooltip: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue2.Y + DataCardValue2.Height
+                    ZIndex: =3
+
+                StarVisible3 As Label:
+                    Alignment: =Align.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =30
+                    OnChange: =false
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey3.Y
+                    ZIndex: =4
+
+            password_DataCard1 As typedDataCard.pcfCoreTextualEditCard:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="password"
+                Default: =ThisItem.password
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'public.skillbooster_ex_tab'],DataSourceInfo.DisplayName,password)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@'public.skillbooster_ex_tab'], DataSourceInfo.MaxLength, password)
+                Required: =true
+                Update: =DataCardValue3.Value
+                Width: =166
+                WidthFit: =true
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey5 As Label:
+                    AutoHeight: =true
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =9
+                    Height: =22
+                    OnChange: =false
+                    Text: =Parent.DisplayName
+                    Tooltip: =Parent.DisplayName
+                    VerticalAlignment: =VerticalAlign.Bottom
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue3 As 'Text box'":
+                    AccessibleLabel: =Parent.DisplayName
+                    DisplayMode: =Parent.DisplayMode
+                    FontSize: =10.5
+                    Height: =32
+                    Mode: ="SingleLine"
+                    Required: =Parent.Required
+                    Tooltip: =Parent.DisplayName
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey5.Y + DataCardKey5.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage5 As Label:
+                    AutoHeight: =true
+                    Color: =Color.Red
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =9
+                    Height: =30
+                    OnChange: =false
+                    Text: =Parent.Error
+                    Tooltip: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue3.Y + DataCardValue3.Height
+                    ZIndex: =3
+
+                StarVisible5 As Label:
+                    Alignment: =Align.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =30
+                    OnChange: =false
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey5.Y
+                    ZIndex: =4
+
+            user_id_DataCard1 As typedDataCard.pcfCoreNumberEditCard:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="user_id"
+                Default: =ThisItem.user_id
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'public.skillbooster_ex_tab'],DataSourceInfo.DisplayName,user_id)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =true
+                Update: =Value(DataCardValue4.Text)
+                Width: =166
+                WidthFit: =true
+                X: =1
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey6 As Label:
+                    AutoHeight: =true
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =9
+                    Height: =22
+                    OnChange: =false
+                    Text: =Parent.DisplayName
+                    Tooltip: =Parent.DisplayName
+                    VerticalAlignment: =VerticalAlign.Bottom
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue4 As text:
+                    AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =0
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                    FocusedBorderThickness: =2
+                    Font: =Font.'Segoe UI'
+                    Format: =TextFormat.Number
+                    Height: =32
+                    HoverBorderColor: =RGBA(166, 166, 166, 1)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(212, 212, 212, 1)
+                    PaddingBottom: =4
+                    PaddingRight: =12
+                    PaddingTop: =0
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(212, 212, 212, 1)
+                    RadiusBottomLeft: =3
+                    RadiusBottomRight: =3
+                    RadiusTopLeft: =3
+                    RadiusTopRight: =3
+                    Size: =10.5
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey6.Y + DataCardKey6.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage8 As Label:
+                    AutoHeight: =true
+                    Color: =Color.Red
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =9
+                    Height: =30
+                    OnChange: =false
+                    Text: =Parent.Error
+                    Tooltip: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue4.Y + DataCardValue4.Height
+                    ZIndex: =3
+
+                StarVisible8 As Label:
+                    Alignment: =Align.Center
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =30
+                    OnChange: =false
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey6.Y
+                    ZIndex: =4
 
             username_DataCard1 As typedDataCard.pcfCoreTextualEditCard:
                 BorderColor: =RGBA(166, 166, 166, 1)
@@ -41,6 +448,7 @@ Screen1 As screen:
 
                 DataCardKey1 As Label:
                     AutoHeight: =true
+                    Color: =
                     DisplayMode: =DisplayMode.Edit
                     FontSize: =9
                     Height: =22
@@ -56,6 +464,8 @@ Screen1 As screen:
 
                 "DataCardValue1 As 'Text box'":
                     AccessibleLabel: =Parent.DisplayName
+                    ColorBackground: =
+                    ColorText: =
                     DisplayMode: =Parent.DisplayMode
                     FontSize: =10.5
                     Height: =32
@@ -86,6 +496,7 @@ Screen1 As screen:
 
                 StarVisible1 As Label:
                     Alignment: =Align.Center
+                    Color: =
                     DisplayMode: =DisplayMode.Edit
                     Height: =30
                     OnChange: =false
@@ -97,10 +508,22 @@ Screen1 As screen:
                     ZIndex: =4
 
     Button1 As Button:
+        BorderColor: =
+        DisabledBorderColor: =
+        DisabledFillColor: =
+        DisabledTextColor: =
         DisplayMode: =DisplayMode.Edit
+        FillColor: =
         Height: =32
+        HoverBorderColor: =
+        HoverFillColor: =
+        HoverTextColor: =
         OnChange: =false
         OnSelect: =SubmitForm(Form1);
+        PressedBorderColor: =
+        PressedFillColor: =
+        PressedTextColor: =
+        TextColor: =
         Width: =96
         X: =56
         Y: =296
