@@ -566,12 +566,15 @@ Screen1 As screen:
         ZIndex: =3
 
         Gallery1 As gallery.BrowseLayout_Vertical_OneTextOneImageVariant_pcfCore:
+            AlignInContainer: =AlignInContainer.SetByContainer
             BorderColor: =RGBA(166, 166, 166, 1)
             DelayItemLoading: =true
             FocusedBorderColor: =RGBA(0, 120, 212, 1)
             FocusedBorderThickness: =2
             Items: ='public.skillbooster_ex_tab'
             Layout: =Layout.Vertical
+            LayoutMinHeight: =287
+            LayoutMinWidth: =320
             LoadingSpinner: =LoadingSpinner.Data
             TemplatePadding: =0
             TemplateSize: =36
@@ -608,6 +611,7 @@ Screen1 As screen:
                 ZIndex: =2
 
             Title2 As Label:
+                Color: =
                 DisplayMode: =DisplayMode.Edit
                 FontSize: =10.5
                 FontWeight: =FontWeight.Normal
