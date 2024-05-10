@@ -880,3 +880,13 @@ WizardStepImpHeader As screen:
         Y: =432
         ZIndex: =2
 
+    Label1 As Label:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        OnChange: =false
+        Text: ="NEW LABEL!!!"
+        Width: =320
+        X: =482
+        Y: =432
+        ZIndex: =3
+
