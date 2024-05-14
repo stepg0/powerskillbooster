@@ -1,0 +1,893 @@
+WizardStepImpHeader As screen:
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    WizardStepImpHdrLayout As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        WizardStepImpHdrHeading As groupContainer.verticalAutoLayoutContainer:
+            Fill: =RGBA(237, 237, 237, 1)
+            FillPortions: =0.1
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =1
+
+            WizardStepImpHdrHeadingIcon As icon.Edit:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(0, 120, 212, 1)
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Height: =32
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Icon: =Icon.Edit
+                PaddingBottom: =3
+                PaddingLeft: =3
+                PaddingRight: =3
+                PaddingTop: =3
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =32
+                ZIndex: =1
+
+            WizardStepImpHdrHeadingLabel01 As Label:
+                Alignment: =Align.Center
+                Color: =
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =0.1
+                FontSize: =14
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =10
+                OnChange: =false
+                Text: ="Header"
+                Width: |
+                    =40
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+            WizardStepImpHdrHeadingBox01 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledFill: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(0, 120, 212, 1)
+                FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                Height: =5
+                HoverFill: =RGBA(0, 120, 212, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                ZIndex: =3
+
+            WizardStepImpHdrHeadingLabel02 As Label:
+                Alignment: =Align.Center
+                Color: =
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =0.1
+                FontSize: =14
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =10
+                OnChange: =false
+                Text: ="Upload"
+                Width: =50
+                X: =0
+                Y: =0
+                ZIndex: =4
+
+            WizardStepImpHdrHeadingBox02 As rectangle:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledFill: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(0, 120, 212, 1)
+                FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                Height: =5
+                HoverFill: =RGBA(0, 120, 212, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                ZIndex: =5
+
+            WizardStepImpHdrHeadingLabel03 As Label:
+                Alignment: =Align.Center
+                Color: =
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =0.1
+                FontSize: =14
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =10
+                OnChange: =false
+                Text: ="Approve"
+                Width: =50
+                X: =0
+                Y: =0
+                ZIndex: =6
+
+        WizardStepImpHdrBody As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            FillPortions: =0.8
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =2
+
+            WizardStepImpHdrMainView As form:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                DataSource: =IMP_CO2_CONS_RAW_HDR
+                DefaultMode: =If(locImpMode = "Edit", FormMode.Edit, FormMode.New)
+                FillPortions: =0.3
+                Item: |-
+                    =LookUp(
+                      IMP_CO2_CONS_RAW_HDR, 
+                      CST_IMP_CODE = locImpCode)
+                LayoutMinHeight: =250
+                LayoutMinWidth: =400
+                ZIndex: =1
+
+                CST_IMP_USERNAME_DataCard1 As typedDataCard.pcfCoreComboBoxEditCard:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="HACKPP_SCEAPP_CST_IMP_USERNAME"
+                    Default: =ThisItem.CST_IMP_USERNAME
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@IMP_CO2_CONS_RAW_HDR],DataSourceInfo.DisplayName,HACKPP_SCEAPP_CST_IMP_USERNAME)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =70
+                    Required: =true
+                    Update: =WizardStepImpHdrMainViewImportUserNameDropDown.Selected
+                    Width: =455
+                    WidthFit: =true
+                    X: =1
+                    Y: =0
+                    ZIndex: =1
+
+                    DataCardKey20 As Label:
+                        AutoHeight: =true
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =22
+                        OnChange: =false
+                        Text: =Parent.DisplayName
+                        Tooltip: =Parent.DisplayName
+                        VerticalAlignment: =VerticalAlign.Bottom
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =10
+                        ZIndex: =1
+
+                    WizardStepImpHdrMainViewImportUserNameDropDown As combobox:
+                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                        ChevronFill: =RGBA(33, 33, 33, 1)
+                        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                        ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                        Color: =RGBA(51, 51, 51, 1)
+                        DefaultSelectedItems: =Parent.Default
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayFields: =["hackpp_sceapp_cst_username"]
+                        DisplayMode: =Parent.DisplayMode
+                        FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                        FocusedBorderThickness: =2
+                        Font: =Font.'Segoe UI'
+                        Height: =32
+                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverColor: =RGBA(51, 51, 51, 1)
+                        HoverFill: =RGBA(212, 212, 212, 1)
+                        Items: =Choices([@IMP_CO2_CONS_RAW_HDR].HACKPP_SCEAPP_CST_IMP_USERNAME)
+                        PaddingLeft: =12
+                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(212, 212, 212, 1)
+                        SearchFields: =["hackpp_sceapp_cst_username"]
+                        SearchItems: =Search(Choices([@IMP_CO2_CONS_RAW_HDR].HACKPP_SCEAPP_CST_IMP_USERNAME),WizardStepImpHdrMainViewImportUserNameDropDown.SearchText,hackpp_sceapp_cst_username)
+                        SelectionColor: =RGBA(51, 51, 51, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        SelectMultiple: =false
+                        Size: =10.5
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 48
+                        X: =24
+                        Y: =DataCardKey20.Y + DataCardKey20.Height + 4
+                        ZIndex: =2
+
+                    ErrorMessage11 As Label:
+                        AutoHeight: =true
+                        Color: =Color.Red
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =30
+                        OnChange: =false
+                        Text: =Parent.Error
+                        Tooltip: =Parent.Error
+                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =WizardStepImpHdrMainViewImportUserNameDropDown.Y + WizardStepImpHdrMainViewImportUserNameDropDown.Height
+                        ZIndex: =3
+
+                    StarVisible11 As Label:
+                        Alignment: =Align.Center
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =20
+                        OnChange: =false
+                        Text: ="*"
+                        VerticalAlignment: =VerticalAlign.Bottom
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        X: =0
+                        Y: =DataCardKey20.Y
+                        ZIndex: =4
+
+                CST_IMP_CODE_DataCard3 As typedDataCard.pcfCoreTextualViewCard:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="hackpp_sceapp_cst_imp_code"
+                    Default: =ThisItem.CST_IMP_CODE
+                    DisplayMode: =If(locImpMode = "New", DisplayMode.Disabled, Parent.DisplayMode)
+                    DisplayName: =DataSourceInfo([@IMP_CO2_CONS_RAW_HDR],DataSourceInfo.DisplayName,hackpp_sceapp_cst_imp_code)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =70
+                    Required: =false
+                    Width: =455
+                    WidthFit: =true
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                    DataCardKey14 As Label:
+                        AutoHeight: =true
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =22
+                        OnChange: =false
+                        Text: =Parent.DisplayName
+                        Tooltip: =Parent.DisplayName
+                        VerticalAlignment: =VerticalAlign.Bottom
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =10
+                        ZIndex: =1
+
+                    "DataCardValue9 As 'Text box'":
+                        ColorBackground: =
+                        ColorText: =
+                        DisplayMode: =DisplayMode.View
+                        FontSize: =10.5
+                        Height: =32
+                        Mode: ="SingleLine"
+                        Tooltip: =Parent.DisplayName
+                        Value: =Parent.Default
+                        Width: =Parent.Width - 48
+                        X: =24
+                        Y: =DataCardKey14.Y + DataCardKey14.Height + 4
+                        ZIndex: =2
+
+                CST_IMP_YEAR_DataCard2 As typedDataCard.pcfCoreNumberEditCard:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="hackpp_sceapp_cst_imp_year"
+                    Default: =ThisItem.CST_IMP_YEAR
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@IMP_CO2_CONS_RAW_HDR],DataSourceInfo.DisplayName,hackpp_sceapp_cst_imp_year)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =70
+                    Required: =true
+                    Update: =Value(WizardStepImpHdrMainViewImportYearTextBox.Text)
+                    Width: =455
+                    WidthFit: =true
+                    X: =2
+                    Y: =0
+                    ZIndex: =2
+
+                    DataCardKey19 As Label:
+                        AutoHeight: =true
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =22
+                        OnChange: =false
+                        Text: =Parent.DisplayName
+                        Tooltip: =Parent.DisplayName
+                        VerticalAlignment: =VerticalAlign.Bottom
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =10
+                        ZIndex: =1
+
+                    WizardStepImpHdrMainViewImportYearTextBox As text:
+                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(51, 51, 51, 1)
+                        Default: =Parent.Default
+                        DelayOutput: =true
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayMode: =Parent.DisplayMode
+                        FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                        FocusedBorderThickness: =2
+                        Font: =Font.'Segoe UI'
+                        Format: =TextFormat.Number
+                        Height: =32
+                        HoverBorderColor: =RGBA(166, 166, 166, 1)
+                        HoverColor: =RGBA(51, 51, 51, 1)
+                        HoverFill: =RGBA(212, 212, 212, 1)
+                        PaddingBottom: =4
+                        PaddingRight: =12
+                        PaddingTop: =0
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(51, 51, 51, 1)
+                        PressedFill: =RGBA(212, 212, 212, 1)
+                        RadiusBottomLeft: =3
+                        RadiusBottomRight: =3
+                        RadiusTopLeft: =3
+                        RadiusTopRight: =3
+                        Size: =10.5
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 48
+                        X: =24
+                        Y: =DataCardKey19.Y + DataCardKey19.Height + 4
+                        ZIndex: =2
+
+                    ErrorMessage10 As Label:
+                        AutoHeight: =true
+                        Color: =Color.Red
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =30
+                        OnChange: =false
+                        Text: =Parent.Error
+                        Tooltip: =Parent.Error
+                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =WizardStepImpHdrMainViewImportYearTextBox.Y + WizardStepImpHdrMainViewImportYearTextBox.Height
+                        ZIndex: =3
+
+                    StarVisible10 As Label:
+                        Alignment: =Align.Center
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =30
+                        OnChange: =false
+                        Text: ="*"
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        X: =0
+                        Y: =DataCardKey19.Y
+                        ZIndex: =4
+
+                CST_IMP_TS_DataCard3 As typedDataCard.pcfCoreDateTimeEditCard:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="hackpp_sceapp_cst_imp_ts"
+                    Default: =ThisItem.CST_IMP_TS
+                    DisplayMode: =If(locImpMode = "New", DisplayMode.Disabled, Parent.DisplayMode)
+                    DisplayName: =DataSourceInfo([@IMP_CO2_CONS_RAW_HDR],DataSourceInfo.DisplayName,hackpp_sceapp_cst_imp_ts)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =70
+                    Required: =true
+                    Update: =If(Not IsBlank(WizardStepImpHdrMainViewImportTSDatePicker.Value), Date(Year(WizardStepImpHdrMainViewImportTSDatePicker.Value), Month(WizardStepImpHdrMainViewImportTSDatePicker.Value), Day(WizardStepImpHdrMainViewImportTSDatePicker.Value)) + Time(Value(HourValue4.Selected.Value), Value(MinuteValue4.Selected.Value), Value(Second(WizardStepImpHdrMainViewImportTSDatePicker.Value))))
+                    Width: =455
+                    WidthFit: =true
+                    X: =0
+                    Y: =1
+                    ZIndex: =2
+
+                    DataCardKey18 As Label:
+                        AutoHeight: =true
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =22
+                        OnChange: =false
+                        Text: =Parent.DisplayName
+                        Tooltip: =Parent.DisplayName
+                        VerticalAlignment: =VerticalAlign.Bottom
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =10
+                        ZIndex: =1
+
+                    "WizardStepImpHdrMainViewImportTSDatePicker As 'Date picker'":
+                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                        DisplayMode: =Parent.DisplayMode
+                        FillColor: =
+                        Height: =32
+                        IconFill: =
+                        OnSelect: |-
+                            =UpdateContext({resetdateTS:false})
+                        TextColor: =
+                        Tooltip: =Parent.DisplayName
+                        Value: =If(resetdateTS,Blank(),Parent.Default)
+                        Width: =(Parent.Width - 48) / 2
+                        X: =24
+                        Y: =DataCardKey18.Y + DataCardKey18.Height + 4
+                        ZIndex: =2
+
+                    HourValue4 As combobox:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                        ChevronFill: =RGBA(33, 33, 33, 1)
+                        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                        ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                        Color: =RGBA(51, 51, 51, 1)
+                        DefaultSelectedItems: =[Text(Hour(Parent.Default),"00")]
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayFields: =["Value"]
+                        DisplayMode: =Parent.DisplayMode
+                        FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                        FocusedBorderThickness: =2
+                        Font: =Font.'Segoe UI'
+                        Height: =28
+                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverColor: =RGBA(51, 51, 51, 1)
+                        HoverFill: =RGBA(212, 212, 212, 1)
+                        IsSearchable: =false
+                        Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
+                        PaddingLeft: =12
+                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(212, 212, 212, 1)
+                        SearchFields: =["Value"]
+                        SearchItems: =[]
+                        SelectionColor: =RGBA(51, 51, 51, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        SelectMultiple: =false
+                        Size: =10.5
+                        Tooltip: =Parent.DisplayName
+                        Width: =WizardStepImpHdrMainViewImportTSDatePicker.Width / 2 - 10
+                        X: =WizardStepImpHdrMainViewImportTSDatePicker.X + WizardStepImpHdrMainViewImportTSDatePicker.Width + 10
+                        Y: =WizardStepImpHdrMainViewImportTSDatePicker.Y + 1
+                        ZIndex: =3
+
+                    Separator4 As Label:
+                        Alignment: =Align.Center
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =10.5
+                        Height: =HourValue4.Height
+                        OnChange: =false
+                        Text: |-
+                            =":"
+                        VerticalAlignment: =VerticalAlign.Middle
+                        Width: =10
+                        X: =HourValue4.X + HourValue4.Width
+                        Y: =HourValue4.Y
+                        ZIndex: =4
+
+                    MinuteValue4 As combobox:
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                        ChevronFill: =RGBA(33, 33, 33, 1)
+                        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                        ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                        Color: =RGBA(51, 51, 51, 1)
+                        DefaultSelectedItems: =[Text(Minute(Parent.Default),"00")]
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayFields: =["Value"]
+                        DisplayMode: =Parent.DisplayMode
+                        FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                        FocusedBorderThickness: =2
+                        Font: =Font.'Segoe UI'
+                        Height: =28
+                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverColor: =RGBA(51, 51, 51, 1)
+                        HoverFill: =RGBA(212, 212, 212, 1)
+                        IsSearchable: =false
+                        Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"]
+                        PaddingLeft: =12
+                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(212, 212, 212, 1)
+                        SearchFields: =["Value"]
+                        SearchItems: =[]
+                        SelectionColor: =RGBA(51, 51, 51, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        SelectMultiple: =false
+                        Size: =10.5
+                        Tooltip: =Parent.DisplayName
+                        Width: =HourValue4.Width
+                        X: =HourValue4.X + HourValue4.Width + Separator4.Width
+                        Y: =HourValue4.Y + 1
+                        ZIndex: =5
+
+                    ErrorMessage9 As Label:
+                        AutoHeight: =true
+                        Color: =Color.Red
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =30
+                        OnChange: =false
+                        Text: =Parent.Error
+                        Tooltip: =Parent.Error
+                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =WizardStepImpHdrMainViewImportTSDatePicker.Y + WizardStepImpHdrMainViewImportTSDatePicker.Height
+                        ZIndex: =6
+
+                    StarVisible9 As Label:
+                        Alignment: =Align.Center
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =20
+                        OnChange: =false
+                        Text: ="*"
+                        VerticalAlignment: =VerticalAlign.Bottom
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        X: =0
+                        Y: =DataCardKey18.Y
+                        ZIndex: =7
+
+                    WizardStepImpHdrMainViewImportTSDatePickerReset As Button:
+                        BorderColor: =
+                        DisabledBorderColor: =
+                        DisabledFillColor: =
+                        DisabledTextColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        FillColor: =
+                        Height: =32
+                        HoverBorderColor: =
+                        HoverFillColor: =
+                        HoverTextColor: =
+                        OnChange: =false
+                        OnSelect: |-
+                            =UpdateContext({resetdateTS:true}); Reset(WizardStepImpHdrMainViewImportTSDatePicker); Reset(HourValue4); Reset(MinuteValue4);
+                        PressedBorderColor: =
+                        PressedFillColor: =
+                        PressedTextColor: =
+                        Text: ="X"
+                        TextColor: =
+                        Width: =79
+                        X: =434
+                        Y: =4
+                        ZIndex: =8
+
+                CST_IMP_STATE_DataCard3 As typedDataCard.pcfCoreComboBoxOptionSetSingleEditCard:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="cr181_cst_imp_state"
+                    Default: =ThisItem.CST_IMP_STATE
+                    DisplayMode: =If(locImpMode = "New", DisplayMode.Disabled, Parent.DisplayMode)
+                    DisplayName: =DataSourceInfo([@IMP_CO2_CONS_RAW_HDR],DataSourceInfo.DisplayName,cr181_cst_imp_state)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =70
+                    Required: =true
+                    Update: =DataCardValue11.Selected.Value
+                    Width: =699
+                    WidthFit: =true
+                    X: =1
+                    Y: =1
+                    ZIndex: =2
+
+                    DataCardKey16 As Label:
+                        AutoHeight: =true
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =22
+                        OnChange: =false
+                        Text: =Parent.DisplayName
+                        Tooltip: =Parent.DisplayName
+                        VerticalAlignment: =VerticalAlign.Bottom
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue11 As combobox:
+                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                        BorderColor: =RGBA(166, 166, 166, 1)
+                        ChevronBackground: =RGBA(255, 255, 255, 1)
+                        ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                        ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                        ChevronFill: =RGBA(33, 33, 33, 1)
+                        ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                        ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                        Color: =RGBA(51, 51, 51, 1)
+                        DefaultSelectedItems: =[Parent.Default]
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayFields: =["Value"]
+                        DisplayMode: =Parent.DisplayMode
+                        FocusedBorderColor: =RGBA(0, 120, 212, 1)
+                        FocusedBorderThickness: =2
+                        Font: =Font.'Segoe UI'
+                        Height: =32
+                        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        HoverColor: =RGBA(51, 51, 51, 1)
+                        HoverFill: =RGBA(212, 212, 212, 1)
+                        IsSearchable: =false
+                        Items: =Choices(IMP_STATES_CHOICE)
+                        PaddingLeft: =12
+                        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =RGBA(212, 212, 212, 1)
+                        SearchFields: =["Value"]
+                        SearchItems: =[]
+                        SelectionColor: =RGBA(51, 51, 51, 1)
+                        SelectionFill: =RGBA(0, 120, 212, 1)
+                        SelectMultiple: =false
+                        Size: =10.5
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 48
+                        X: =24
+                        Y: =DataCardKey16.Y + DataCardKey16.Height + 4
+                        ZIndex: =2
+
+                    ErrorMessage7 As Label:
+                        AutoHeight: =true
+                        Color: =Color.Red
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =30
+                        OnChange: =false
+                        Text: =Parent.Error
+                        Tooltip: =Parent.Error
+                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =DataCardValue11.Y + DataCardValue11.Height
+                        ZIndex: =3
+
+                    StarVisible7 As Label:
+                        Alignment: =Align.Center
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =20
+                        OnChange: =false
+                        Text: ="*"
+                        VerticalAlignment: =VerticalAlign.Bottom
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        X: =0
+                        Y: =DataCardKey16.Y
+                        ZIndex: =4
+
+                CST_IMP_DESC_DataCard2 As typedDataCard.pcfCoreTextualEditCard:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="cr181_cst_imp_desc"
+                    Default: =ThisItem.CST_IMP_DESC
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@IMP_CO2_CONS_RAW_HDR],DataSourceInfo.DisplayName,cr181_cst_imp_desc)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =70
+                    MaxLength: =DataSourceInfo([@IMP_CO2_CONS_RAW_HDR], DataSourceInfo.MaxLength, cr181_cst_imp_desc)
+                    Required: =true
+                    Update: =WizardStepImpHdrMainViewImportDescTextBox.Value
+                    Width: =455
+                    WidthFit: =true
+                    X: =0
+                    Y: =2
+                    ZIndex: =2
+
+                    DataCardKey15 As Label:
+                        AutoHeight: =true
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =22
+                        OnChange: =false
+                        Text: =Parent.DisplayName
+                        Tooltip: =Parent.DisplayName
+                        VerticalAlignment: =VerticalAlign.Bottom
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =10
+                        ZIndex: =1
+
+                    "WizardStepImpHdrMainViewImportDescTextBox As 'Text box'":
+                        AccessibleLabel: =Parent.DisplayName
+                        ColorBackground: =
+                        ColorText: =
+                        DisplayMode: =Parent.DisplayMode
+                        FontSize: =10.5
+                        Height: =32
+                        Mode: ="SingleLine"
+                        Required: =Parent.Required
+                        Tooltip: =Parent.DisplayName
+                        Value: =Parent.Default
+                        Width: =Parent.Width - 48
+                        X: =24
+                        Y: =DataCardKey15.Y + DataCardKey15.Height + 4
+                        ZIndex: =2
+
+                    ErrorMessage6 As Label:
+                        AutoHeight: =true
+                        Color: =Color.Red
+                        DisplayMode: =DisplayMode.Edit
+                        FontSize: =9
+                        Height: =30
+                        OnChange: =false
+                        Text: =Parent.Error
+                        Tooltip: =Parent.Error
+                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =Parent.Width - 48
+                        Wrap: =true
+                        X: =24
+                        Y: =WizardStepImpHdrMainViewImportDescTextBox.Y + WizardStepImpHdrMainViewImportDescTextBox.Height
+                        ZIndex: =3
+
+                    StarVisible6 As Label:
+                        Alignment: =Align.Center
+                        Color: =
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =30
+                        OnChange: =false
+                        Text: ="*"
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        X: =0
+                        Y: =DataCardKey15.Y
+                        ZIndex: =4
+
+        WizardStepImpHdrFooter As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(237, 237, 237, 1)
+            FillPortions: =0.1
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =3
+
+            WizardStepImpHdrFooterButtonNext As Button:
+                Alignment: =Align.Center
+                BorderColor: =
+                DisabledBorderColor: =
+                DisabledFillColor: =
+                DisabledTextColor: =
+                DisplayMode: =DisplayMode.Edit
+                FillColor: =
+                Height: =32
+                HoverBorderColor: =
+                HoverFillColor: =
+                HoverTextColor: =
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnChange: =false
+                OnSelect: |-
+                    =Navigate(
+                      WizardStepUploadData, 
+                      ScreenTransition.None, 
+                      { 
+                        locImpState: locImpState, 
+                        locImpCode: locImpCode})
+                PressedBorderColor: =
+                PressedFillColor: =
+                PressedTextColor: =
+                Text: ="Next"
+                TextColor: =
+                Underline: =true
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            WizardStepImpHdrFooterLabel As Label:
+                Color: =
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =320
+                OnChange: =false
+                Text: =""
+                Width: =10
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+            WizardStepImpHdrFooterButtonHome As Button:
+                BorderColor: =
+                DisabledBorderColor: =
+                DisabledFillColor: =
+                DisabledTextColor: =
+                DisplayMode: =DisplayMode.Edit
+                FillColor: =
+                Height: =32
+                HoverBorderColor: =
+                HoverFillColor: =
+                HoverTextColor: =
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnChange: =false
+                OnSelect: =Navigate(OvrImports, ScreenTransition.None, {})
+                PressedBorderColor: =
+                PressedFillColor: =
+                PressedTextColor: =
+                Text: ="Home"
+                TextColor: =
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+    Button4 As Button:
+        BorderColor: =
+        DisabledBorderColor: =
+        DisabledFillColor: =
+        DisabledTextColor: =
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =
+        Height: =32
+        HoverBorderColor: =
+        HoverFillColor: =
+        HoverTextColor: =
+        OnChange: =false
+        OnSelect: |-
+            =If(locImpMode = "New", 
+               UpdateContext(
+            	{locParaUserName: WizardStepImpHdrMainViewImportUserNameDropDown.Selected.CST_USERNAME,
+            	 locParaYear: WizardStepImpHdrMainViewImportYearTextBox.Text,
+            	 locParaDesc: WizardStepImpHdrMainViewImportDescTextBox.Value});
+               UpdateContext(
+            	 {locNewImpCode: WizardStepImpHdrMainViewSubmitFlow.Run(locParaUserName, locParaYear, locParaDesc).returnedval });
+               Notify("Import " & locNewImpCode & " has been created."), 
+               SubmitForm(WizardStepImpHdrMainView);
+               Notify("Import " & WizardStepImpHdrMainView.LastSubmit.CST_IMP_CODE & " has been updated."))
+        PressedBorderColor: =
+        PressedFillColor: =
+        PressedTextColor: =
+        Text: ="Submit"
+        TextColor: =
+        Width: =96
+        X: =24
+        Y: =432
+        ZIndex: =2
+
+    Label1 As Label:
+        Color: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        OnChange: =false
+        Text: ="NEW LABEL!!!"
+        Width: =320
+        X: =482
+        Y: =432
+        ZIndex: =3
+
