@@ -93,6 +93,8 @@ jobs:
             --head "${{ github.ref }}" \  
             # Specify the repository where the pull request will be created
             --repo "${{ github.repository }}"
+            # Provide the GitHub token for authentication
+            --token "${{ secrets.GH_TOKEN }}"
             # Check if the pull request creation was successful
             if [ $? -ne 0 ]; then
               # Notifies the user if pull request creation failed
