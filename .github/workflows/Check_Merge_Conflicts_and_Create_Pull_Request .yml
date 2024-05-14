@@ -1,0 +1,102 @@
+# Name of the workflow
+name: Check Merge Conflicts and Create Pull Request  
+
+# Define the event trigger for the workflow
+on:
+  push:
+    branches:
+      - '*'  # Trigger the workflow for all branches
+
+# Define jobs for the workflow
+jobs:
+  # Define the job to check for merge conflicts
+  check-merge-conflicts:
+    # Use an Ubuntu runner for this job
+    runs-on: ubuntu-latest  
+
+    # Steps for the job
+    steps:
+      # Step to checkout the repository content
+      - name: Checkout repository  
+        # Use the actions/checkout action to checkout the repository
+        uses: actions/checkout@v2  
+
+      # Step to check for merge conflicts
+      - name: Check for merge conflicts  
+        # ID for this step, used to reference the output
+        id: check_conflicts  
+        # Script to run for the step
+        run: |
+          # Fetch the latest changes from the branch that triggered the event
+          git fetch origin ${{ github.ref }}  
+          # Check if the current branch is an ancestor of the branch that triggered the event
+          git merge-base --is-ancestor HEAD ${{ github.ref }}  
+          # If the previous command failed (i.e., merge conflicts detected)
+          if [ $? -ne 0 ]; then  
+            # Print an error message
+            echo "::error::Merge conflicts detected. Please resolve conflicts before creating a pull request."  
+            # Exit the script
+            exit 1 
+          fi  
+
+  # Define the job to create a pull request
+  create-pull-request:
+    # Use an Ubuntu runner for this job
+    runs-on: ubuntu-latest  
+
+    # This job depends on the check-merge-conflicts job
+    needs: check-merge-conflicts  
+
+    # Condition to run this job only if the check-merge-conflicts job succeeded and no merge conflicts were detected
+    if: success() && needs.check-merge-conflicts.outputs.check_conflicts == '0'  
+
+    # Steps for the job
+    steps:
+      # Step to check if a pull request shall be created
+      - name: Check if pull request shall be created  
+        # ID for this step, used to reference the output
+        id: check_pr_creation  
+
+        # Script to run for the step
+        run: |
+          # If the event that triggered the workflow is a pull request event
+          if [ "${{ github.event_name }}" == "pull_request" ]; then  
+            # Set the output variable pr_creation_flag to false
+            echo "::set-output name=pr_creation_flag::false"  
+          # Otherwise (if the event is not a pull request event)
+          else  
+            # Set the output variable pr_creation_flag to true
+            echo "::set-output name=pr_creation_flag::true"  
+          fi
+
+      # Step to create a pull request
+      - name: Create Pull Request  
+        # ID for this step
+        id: create_pr  
+
+        # Condition to run this step only if a pull request shall be created
+        if: steps.check_pr_creation.outputs.pr_creation_flag == 'true'  
+
+        # Script to run for the step
+        run: |
+          # Use the GitHub CLI to create a pull request
+          gh pr create \  
+            # Set the title of the pull request
+            --title "${{ github.ref }} -> main" \  
+            # Set the commit message for the pull request
+            --body "Automated pull request creation from ${{ github.ref }} branch." \  
+            # Specify the reviewer for the pull request
+            --reviewer "dheeraj1228" \  
+            # Specify the base branch for the pull request
+            --base "main" \  
+            # Specify the head branch for the pull request
+            --head "${{ github.ref }}" \  
+            # Specify the repository where the pull request will be created
+            --repo "${{ github.repository }}"
+            # Check if the pull request creation was successful
+            if [ $? -ne 0 ]; then
+              # Notifies the user if pull request creation failed
+              echo "::error::Failed to create pull request. Please check the workflow logs for details."
+              # Exit the script
+              exit 1
+            fi
