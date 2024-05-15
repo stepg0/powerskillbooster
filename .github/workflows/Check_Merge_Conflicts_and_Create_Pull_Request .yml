@@ -21,9 +21,6 @@ jobs:
         # ID for this step
         id: create_pr  
 
-        # Condition to run this step only if a pull request shall be created
-        if: steps.check_pr_creation.outputs.pr_creation_flag == 'true'  
-
         # Script to run for the step
         run: |
           # Use the GitHub CLI to create a pull request
