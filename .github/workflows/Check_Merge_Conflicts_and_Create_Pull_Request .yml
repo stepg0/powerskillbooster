@@ -3,7 +3,7 @@ name: Check Merge Conflicts and Create Pull Request
 
 # Define the event trigger for the workflow
 on:
-  workflow_dispatch: # Trigger the workflow manually
+  workflow_dispatch: # Manually trigger the workflow
 
 # Define jobs for the workflow
 jobs:
@@ -52,14 +52,14 @@ jobs:
 
         # Script to run for the step
         run: |
-          # If the event that triggered the workflow is a pull request event
-          if [ "${{ github.event_name }}" == "pull_request" ]; then  
-            # Set the output variable pr_creation_flag to false
-            echo "::set-output name=pr_creation_flag::false"  
-          # Otherwise (if the event is not a pull request event)
-          else  
+          # If the event that triggered the workflow is a workflow dispatch event
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then  
             # Set the output variable pr_creation_flag to true
             echo "::set-output name=pr_creation_flag::true"  
+          # Otherwise (if the event is not a workflow dispatch event)
+          else  
+            # Set the output variable pr_creation_flag to false
+            echo "::set-output name=pr_creation_flag::false"  
           fi
 
       # Step to create a pull request
