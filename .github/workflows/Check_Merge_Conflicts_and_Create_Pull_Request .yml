@@ -3,9 +3,7 @@ name: Check Merge Conflicts and Create Pull Request
 
 # Define the event trigger for the workflow
 on:
-  push:
-    branches:
-      - '*'  # Trigger the workflow for all branches
+  workflow_dispatch: # Trigger the workflow manually
 
 # Define jobs for the workflow
 jobs:
@@ -44,9 +42,6 @@ jobs:
 
     # This job depends on the check-merge-conflicts job
     needs: check-merge-conflicts  
-
-    # Condition to run this job only if the check-merge-conflicts job succeeded and no merge conflicts were detected
-    if: success() && needs.check-merge-conflicts.outputs.check_conflicts == '0'  
 
     # Steps for the job
     steps:
