@@ -22,28 +22,15 @@ jobs:
         id: create_pr  
 
         # Script to run for the step
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # Set the GH_TOKEN environment variable with the GitHub token
+
         run: |
           # Use the GitHub CLI to create a pull request
           gh pr create \
-            # Set the title of the pull request
             --title "${{ github.ref }} -> main" \
-            # Set the commit message for the pull request
             --body "Automated pull request creation from ${{ github.ref }} branch." \
-            # Specify the reviewer for the pull request
-            --reviewer "reviewer_username" \
-            # Specify the base branch for the pull request
+            --reviewer "dheeraj1228" \
             --base "main" \
-            # Specify the head branch for the pull request
             --head "${{ github.ref }}" \
-            # Specify the repository where the pull request will be created
-            --repo "${{ github.repository }}" \
-            # Provide the GitHub token for authentication
-            --token "${{ secrets.GH_TOKEN }}"
-
-          # Check if the pull request creation was successful
-          if [ $? -ne 0 ]; then
-            # Notifies the user if pull request creation failed
-            echo "::error::Failed to create pull request. Please check the workflow logs for details."
-            # Exit the script
-            exit 1
-          fi
+            --repo "${{ github.repository }}"
