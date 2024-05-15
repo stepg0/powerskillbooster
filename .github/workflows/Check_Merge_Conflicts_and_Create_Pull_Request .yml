@@ -32,7 +32,7 @@ jobs:
           # Determine the target branch (usually main)
           target_branch="main"
           # Check if there are any changes between the source and target branches
-          conflicts=$(git diff $target_branch..$source_branch --name-only)
+          conflicts=$(git diff origin/$target_branch..$source_branch --name-only)
           # If there are conflicts, print an error message and fail the job
           if [ -n "$conflicts" ]; then
             echo "::error::Merge conflicts detected. Please resolve conflicts before creating a pull request."
