@@ -506,3 +506,13 @@
                 Y: =0
                 ZIndex: =5
 
+    Label1 As Label:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        OnChange: =false
+        Text: ="NEW LABEL IN WIZARD"
+        Width: =320
+        X: =536
+        Y: =380
+        ZIndex: =2
+
