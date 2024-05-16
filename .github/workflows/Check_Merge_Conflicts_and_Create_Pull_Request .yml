@@ -3,28 +3,78 @@ name: Check Merge Conflicts and Create Pull Request
 
 # Define the event trigger for the workflow
 on:
-  push:
-    branches:
-      - '*'  # Trigger the workflow for all branches
+  workflow_dispatch: # Manually trigger the workflow
 
 # Define jobs for the workflow
 jobs:
-  # Define the job to create a pull request
-  create-pull-request:
+  # Define the job to check for merge conflicts
+  check-merge-conflicts:
     # Use an Ubuntu runner for this job
     runs-on: ubuntu-latest  
 
     # Steps for the job
     steps:
+      # Step to checkout the repository content
+      - name: Checkout repository  
+        # Use the actions/checkout action to checkout the repository
+        uses: actions/checkout@v2  
+
+      # Step to check for merge conflicts
+      - name: Check for merge conflicts  
+        # Script to run for the step
+        run: |
+          # Fetch the latest changes from the remote repository
+          git fetch origin
+          # Determine the target branch (usually main)
+          target_branch="main"
+          # Check for merge conflicts between the current branch and the target branch
+          conflicts=$(git diff --name-only origin/$target_branch)
+          # If there are conflicts, print an error message and fail the job
+          if [ -n "$conflicts" ]; then
+            echo "::error::Merge conflicts detected. Please resolve conflicts before creating a pull request."
+            exit 1
+          fi
+
+  # Define the job to create a pull request
+  create-pull-request:
+    # Use an Ubuntu runner for this job
+    runs-on: ubuntu-latest  
+
+    # This job depends on the check-merge-conflicts job
+    needs: check-merge-conflicts  
+
+    # Steps for the job
+    steps:
+      # Step to check if a pull request shall be created
+      - name: Check if pull request shall be created  
+        # ID for this step, used to reference the output
+        id: check_pr_creation  
+
+        # Script to run for the step
+        run: |
+          # If the event that triggered the workflow is a workflow dispatch event
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then  
+            # Set the output variable pr_creation_flag to true
+            echo "::set-output name=pr_creation_flag::true"  
+          # Otherwise (if the event is not a workflow dispatch event)
+          else  
+            # Set the output variable pr_creation_flag to false
+            echo "::set-output name=pr_creation_flag::false"  
+          fi
+
       # Step to create a pull request
       - name: Create Pull Request  
         # ID for this step
         id: create_pr  
 
+        # Condition to run this step only if a pull request shall be created
+        if: steps.check_pr_creation.outputs.pr_creation_flag == 'true'  
+
         # Script to run for the step
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}  # Set the GH_TOKEN environment variable with the GitHub token
 
+        # Script to run for the step
         run: |
           # Use the GitHub CLI to create a pull request
           gh pr create \
@@ -34,3 +84,10 @@ jobs:
             --base "main" \
             --head "${{ github.ref }}" \
             --repo "${{ github.repository }}"
+          # Check if the pull request creation was successful
+          if [ $? -ne 0 ]; then
+            # Notifies the user if pull request creation failed
+            echo "::error::Failed to create pull request. Please check the workflow logs for details."
+            # Exit the script
+            exit 1
+          fi
