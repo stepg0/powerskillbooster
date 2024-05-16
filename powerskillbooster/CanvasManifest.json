@@ -6,7 +6,7 @@
       "DataflowAnalysisFlagStateToggledByUser": false
     },
     "DocVersion": "1.341",
-    "MinVersionToLoad": "1.331",
+    "MinVersionToLoad": "1.33",
     "MSAppStructureVersion": "2.0"
   },
   "Properties": {
