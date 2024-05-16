@@ -23,16 +23,16 @@ jobs:
       - name: Check for merge conflicts  
         # Script to run for the step
         run: |
-          # Fetch the latest changes from the remote repository
-          git fetch origin
-          # Determine the target branch (usually main)
-          target_branch="main"
-          # Check for merge conflicts between the current branch and the target branch
-          conflicts=$(git diff --name-only origin/$target_branch)
-          # If there are conflicts, print an error message and fail the job
-          if [ -n "$conflicts" ]; then
-            echo "::error::Merge conflicts detected. Please resolve conflicts before creating a pull request."
-            exit 1
+          # Fetch the latest changes from the branch that triggered the event
+          git fetch origin ${{ github.ref }}  
+          # Check if the current branch is an ancestor of the branch that triggered the event
+          git merge-base --is-ancestor HEAD ${{ github.ref }}  
+          # If the previous command failed (i.e., merge conflicts detected)
+          if [ $? -ne 0 ]; then  
+            # Print an error message
+            echo "::error::Merge conflicts detected. Please resolve conflicts before creating a pull request."  
+            # Exit the script
+            exit 1 
           fi
 
   # Define the job to create a pull request
