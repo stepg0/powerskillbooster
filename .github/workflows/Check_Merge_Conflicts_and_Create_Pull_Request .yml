@@ -28,6 +28,7 @@ jobs:
           # Check if the current branch is an ancestor of the branch that triggered the event
           git merge-base --is-ancestor HEAD ${{ github.ref }}  
           # If the previous command failed (i.e., merge conflicts detected)
+          echo $?
           if [ $? -ne 1 ]; then  
             # Print an error message
             echo "::error::Merge conflicts detected. Please resolve conflicts before creating a pull request."  
